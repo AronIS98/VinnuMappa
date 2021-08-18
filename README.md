@@ -1,29 +1,6 @@
 # Annotate_Work
 Annotation software developed at work
-Installation guide:
-° Install Docker (& Linux).
-    - https://www.docker.com/
-    -
-° Open VS studio or something comparable
-type:
-    cd cvat
-    docker-compose up -d
-or:
-    docker-compose -f docker-compose.yml -f docker-compose.dev.yml build
-    docker-compose up -d
-    (docker-compose -p CUSTOMNAME up -d) if you dont want the default name
 
-ATTENTION!
-might need to run:
-docker-compose -f docker-compose.yml -f components/serverless/docker-compose.serverless.yml up -d
-instead
-
-then:
-    docker exec -it cvat /bin/bash
-    python3 manage.py createsuperuser
-
-IF you need to reinstall and "ERROR: Pool overlaps with other one on this address space" is giving you pain, type:
-    docker network prune
 
 
 
@@ -57,7 +34,7 @@ sudo python3 -m pip install setuptools docker-compose
 
 
 sudo apt-get --no-install-recommends install -y git
-git clone https://github.com/opencv/cvat
+git clone https://github.com/AronIS98/VinnuMappa.git
 cd cvat
 
 
@@ -71,5 +48,22 @@ docker-compose down
 
 
 CVAT on Google (GCP):
+First see the following video tutorial on how to create a GCP server that is able to run CVAT.
+-----Video in progress-----
+next type:
+sudo nano docker-compose.yml
+locate: CVAT_HOST: LOCALHOST
+and change LOCALHOST to the servers external ip address:
+![external_IP](https://user-images.githubusercontent.com/54920024/129982693-b0a47c8d-47a2-4e43-b9a2-e63f15a764c3.png)
 
 CVAT with Automatic Annotation support:
+docker-compose -f docker-compose.yml -f components/serverless/docker-compose.serverless.yml up -d
+finally:
+    docker exec -it cvat /bin/bash
+    python3 manage.py createsuperuser
+
+---ATTENTION---
+If you if you ever get the error "ERROR: Pool overlaps with other one on this address space" is giving you pain, type:
+    either typing:
+    docker network prune
+    and compose docker up again using chosen method.
