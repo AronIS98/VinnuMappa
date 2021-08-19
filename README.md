@@ -51,14 +51,19 @@ CVAT on Google (GCP):
 First see the following video tutorial on how to create a GCP server that is able to run CVAT.
 -----Video in progress-----
 next type:
+
 sudo nano docker-compose.yml
+
 locate: CVAT_HOST: LOCALHOST
+
 and change LOCALHOST to the servers external ip address:
 
 ![external_IP](https://user-images.githubusercontent.com/54920024/129982693-b0a47c8d-47a2-4e43-b9a2-e63f15a764c3.png)
 
 CVAT with Automatic Annotation support:
+
 docker-compose -f docker-compose.yml -f components/serverless/docker-compose.serverless.yml up -d
+
 finally:
     docker exec -it cvat /bin/bash
     python3 manage.py createsuperuser
