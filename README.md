@@ -69,7 +69,9 @@ finally:
     python3 manage.py createsuperuser
 
 ---ATTENTION---
-If you if you ever get the error "ERROR: Pool overlaps with other one on this address space" is giving you pain, type:
-    either typing:
+
+If you if you ever get the error "ERROR: Pool overlaps with other one on this address space", type:
+
     docker network prune
+    
     and compose docker up again using chosen method.
