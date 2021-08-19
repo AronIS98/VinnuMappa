@@ -54,6 +54,7 @@ next type:
 sudo nano docker-compose.yml
 locate: CVAT_HOST: LOCALHOST
 and change LOCALHOST to the servers external ip address:
+
 ![external_IP](https://user-images.githubusercontent.com/54920024/129982693-b0a47c8d-47a2-4e43-b9a2-e63f15a764c3.png)
 
 CVAT with Automatic Annotation support:
